@@ -1,0 +1,54 @@
+#include <iostream>
+#include <cmath>  // Для математичних функцій
+
+int main() {
+    //Integer3
+    // Розмір файлу в байтах
+    unsigned long long fileSize;
+    
+    std::cout << "Введіть розмір файлу в байтах: ";
+    std::cin >> fileSize;
+
+    // Кількість повних кілобайт
+    unsigned long long kilobytes = fileSize / 1024;
+
+    std::cout << "Кількість повних кілобайт: " << kilobytes << std::endl;
+    //Boolean8
+    // Введення двох цілих чисел A і B
+    int A, B;
+    
+    std::cout << "Введіть число A: ";
+    std::cin >> A;
+    
+    std::cout << "Введіть число B: ";
+    std::cin >> B;
+
+    // Перевірка, чи обидва числа непарні
+    bool isOdd = (A % 2 != 0) && (B % 2 != 0);
+
+    // Виведення результату
+    if (isOdd) {
+        std::cout << "Істинно: обидва числа непарні" << std::endl;
+    } else {
+        std::cout << "Хибно: одне або обидва числа парні" << std::endl;
+    }
+    //y=...(tab.3 #24) 
+    // Введення змінної x
+    double x;
+    std::cout << "Введіть значення x: ";
+    std::cin >> x;
+
+    // Обчислення виразу
+    double numerator = pow(1.5, pow(x, pow(sin(x*x), 2))) * cbrt(2) * fabs(sin(3*x + 24) * log(fabs(pow(x, 3))) / log(3)); // чисельник
+    double denominator = tan(2*x) * sin(pow(x, 3)); // знаменник
+    
+    // Перевірка знаменника на 0, щоб уникнути ділення на 0
+    if (denominator != 0) {
+        double y = numerator / denominator;
+        std::cout << "Значення y: " << y << std::endl;
+    } else {
+        std::cout << "Помилка: знаменник дорівнює 0." << std::endl;
+    }
+
+    return 0;
+}
